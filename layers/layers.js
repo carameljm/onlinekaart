@@ -24,73 +24,144 @@ var wms_layers = [];
                 url: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png'
             })
         });
-var format_Gemeente_2 = new ol.format.GeoJSON();
-var features_Gemeente_2 = format_Gemeente_2.readFeatures(json_Gemeente_2, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_Gemeente_2 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_Gemeente_2.addFeatures(features_Gemeente_2);
-var lyr_Gemeente_2 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_Gemeente_2, 
-                style: style_Gemeente_2,
-                popuplayertitle: 'Gemeente',
-                interactive: true,
-                title: '<img src="styles/legend/Gemeente_2.png" /> Gemeente'
-            });
-var format_buurtwegenoostvlaanderen_3 = new ol.format.GeoJSON();
-var features_buurtwegenoostvlaanderen_3 = format_buurtwegenoostvlaanderen_3.readFeatures(json_buurtwegenoostvlaanderen_3, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_buurtwegenoostvlaanderen_3 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_buurtwegenoostvlaanderen_3.addFeatures(features_buurtwegenoostvlaanderen_3);
-var lyr_buurtwegenoostvlaanderen_3 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_buurtwegenoostvlaanderen_3, 
-                style: style_buurtwegenoostvlaanderen_3,
-                popuplayertitle: 'buurtwegenoostvlaanderen',
-                interactive: true,
-                title: '<img src="styles/legend/buurtwegenoostvlaanderen_3.png" /> buurtwegenoostvlaanderen'
-            });
-var format_wijzigingenoostvlaanderen_4 = new ol.format.GeoJSON();
-var features_wijzigingenoostvlaanderen_4 = format_wijzigingenoostvlaanderen_4.readFeatures(json_wijzigingenoostvlaanderen_4, 
-            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
-var jsonSource_wijzigingenoostvlaanderen_4 = new ol.source.Vector({
-    attributions: ' ',
-});
-jsonSource_wijzigingenoostvlaanderen_4.addFeatures(features_wijzigingenoostvlaanderen_4);
-var lyr_wijzigingenoostvlaanderen_4 = new ol.layer.Vector({
-                declutter: false,
-                source:jsonSource_wijzigingenoostvlaanderen_4, 
-                style: style_wijzigingenoostvlaanderen_4,
-                popuplayertitle: 'wijzigingenoostvlaanderen',
-                interactive: true,
-    title: 'wijzigingenoostvlaanderen<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_0.png" /> Afschaffing<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_1.png" /> Deels afgeschaft bij verplaatsing<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_2.png" /> Nieuw deel bij verplaatsing<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_3.png" /> Nieuwe weg<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_4.png" /> Onbepaalde wijziging<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_5.png" /> Verbreding<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_6.png" /> Verklaring/erkenning<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_7.png" /> Verlenging<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_8.png" /> Verplaatsing<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_9.png" /> Versmalling<br />\
-    <img src="styles/legend/wijzigingenoostvlaanderen_4_10.png" /> <br />' });
 
-lyr_GoogleHybrid_0.setVisible(true);lyr_WorldOpenStreetMapFoundationOpenStreetMapCartoStyledefault_1.setVisible(true);lyr_Gemeente_2.setVisible(true);lyr_buurtwegenoostvlaanderen_3.setVisible(true);lyr_wijzigingenoostvlaanderen_4.setVisible(true);
-var layersList = [lyr_GoogleHybrid_0,lyr_WorldOpenStreetMapFoundationOpenStreetMapCartoStyledefault_1,lyr_Gemeente_2,lyr_buurtwegenoostvlaanderen_3,lyr_wijzigingenoostvlaanderen_4];
-lyr_Gemeente_2.set('fieldAliases', {'id': 'id', 'UIDN': 'UIDN', 'OIDN': 'OIDN', 'TERRID': 'TERRID', 'NISCODE': 'NISCODE', 'NAAM': 'NAAM', 'DATPUBLBS': 'DATPUBLBS', 'NUMAC': 'NUMAC', });
-lyr_buurtwegenoostvlaanderen_3.set('fieldAliases', {'ID': 'ID', 'NR': 'NR', 'TYPE': 'TYPE', 'LENGTH': 'LENGTH', 'GEMID': 'GEMID', 'PLANID': 'PLANID', 'CEVI_OID': 'CEVI_OID', 'GEMEENTE': 'GEMEENTE', 'DETAILPLAN': 'DETAILPLAN', 'TYPE_LABEL': 'TYPE_LABEL', });
-lyr_wijzigingenoostvlaanderen_4.set('fieldAliases', {'GEMID': 'GEMID', 'PLANID': 'PLANID', 'NR': 'NR', 'IDWIJZIGIN': 'IDWIJZIGIN', 'TYPE': 'TYPE', 'TYPE_LABEL': 'TYPE_LABEL', 'DATUM': 'DATUM', 'LINK': 'LINK', 'CEVI_OID': 'CEVI_OID', 'GEMEENTE': 'GEMEENTE', });
-lyr_Gemeente_2.set('fieldImages', {'id': 'TextEdit', 'UIDN': 'Range', 'OIDN': 'Range', 'TERRID': 'Range', 'NISCODE': 'TextEdit', 'NAAM': 'TextEdit', 'DATPUBLBS': 'DateTime', 'NUMAC': 'TextEdit', });
-lyr_buurtwegenoostvlaanderen_3.set('fieldImages', {'ID': 'TextEdit', 'NR': 'TextEdit', 'TYPE': 'TextEdit', 'LENGTH': 'TextEdit', 'GEMID': 'TextEdit', 'PLANID': 'TextEdit', 'CEVI_OID': 'Range', 'GEMEENTE': 'TextEdit', 'DETAILPLAN': 'TextEdit', 'TYPE_LABEL': 'TextEdit', });
-lyr_wijzigingenoostvlaanderen_4.set('fieldImages', {'GEMID': 'TextEdit', 'PLANID': 'TextEdit', 'NR': 'TextEdit', 'IDWIJZIGIN': 'TextEdit', 'TYPE': 'TextEdit', 'TYPE_LABEL': 'TextEdit', 'DATUM': 'DateTime', 'LINK': 'TextEdit', 'CEVI_OID': 'Range', 'GEMEENTE': 'TextEdit', });
-lyr_Gemeente_2.set('fieldLabels', {'id': 'no label', 'UIDN': 'no label', 'OIDN': 'no label', 'TERRID': 'no label', 'NISCODE': 'no label', 'NAAM': 'no label', 'DATPUBLBS': 'no label', 'NUMAC': 'no label', });
-lyr_buurtwegenoostvlaanderen_3.set('fieldLabels', {'ID': 'no label', 'NR': 'no label', 'TYPE': 'no label', 'LENGTH': 'no label', 'GEMID': 'no label', 'PLANID': 'no label', 'CEVI_OID': 'no label', 'GEMEENTE': 'no label', 'DETAILPLAN': 'no label', 'TYPE_LABEL': 'no label', });
-lyr_wijzigingenoostvlaanderen_4.set('fieldLabels', {'GEMID': 'no label', 'PLANID': 'no label', 'NR': 'no label', 'IDWIJZIGIN': 'no label', 'TYPE': 'no label', 'TYPE_LABEL': 'no label', 'DATUM': 'no label', 'LINK': 'no label', 'CEVI_OID': 'no label', 'GEMEENTE': 'no label', });
-lyr_wijzigingenoostvlaanderen_4.on('precompose', function(evt) {
+        var lyr_BelgiNGIMapBelgiumin1873vanaf1860_2 = new ol.layer.Tile({
+            'title': 'België - NGI - Map Belgium in 1873 (vanaf 1860)',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://wmts.ngi.be/arcgis/rest/services/seamless_carto__default__3857__140/MapServer/tile/{z}/{y}/{x}'
+            })
+        });
+
+        var lyr_VlaanderenDigitaalVlaanderenFerrariskaart1777Vlaanderen_3 = new ol.layer.Tile({
+            'title': 'Vlaanderen - Digitaal Vlaanderen - Ferrariskaart (1777), Vlaanderen',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://geo.api.vlaanderen.be/HISTCART/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=ferraris&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+var lyr_Villaret_4 = new ol.layer.Tile({
+                            source: new ol.source.TileWMS(({
+                              url: "https://geo.api.vlaanderen.be/histcart/wms",
+                              attributions: ' ',
+                              params: {
+                                "LAYERS": "Villaret",
+                                "TILED": "true",
+                                "VERSION": "1.3.0"},
+                            })),
+                            title: 'Villaret',
+                            popuplayertitle: 'Villaret',
+                            type: '',
+                            opacity: 1.000000,
+                            
+                            
+                          });
+              wms_layers.push([lyr_Villaret_4, 0]);
+
+        var lyr_FlandersDigitaalVlaanderenAtlasderBuurtwegenca1840Vlaanderen_5 = new ol.layer.Tile({
+            'title': 'Flanders - Digitaal Vlaanderen - Atlas der Buurtwegen (ca 1840), Vlaanderen',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://geo.api.vlaanderen.be/HISTCART/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=abw&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+
+        var lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIImultidirectionalehillshade025m_6 = new ol.layer.Tile({
+            'title': 'Vlaanderen - Digitaal Vlaanderen - Digitaal Hoogtemodel Vlaanderen II, multidirectionale hillshade 0,25 m',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://geo.api.vlaanderen.be/DHMV/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=DHMV_II_HILL_25cm&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+
+        var lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIISkyviewfactor025m_7 = new ol.layer.Tile({
+            'title': 'Vlaanderen - Digitaal Vlaanderen - Digitaal Hoogtemodel Vlaanderen II, Skyview factor 0,25 m',
+            'opacity': 1.000000,
+            
+            
+            source: new ol.source.XYZ({
+            attributions: ' ',
+                url: 'https://geo.api.vlaanderen.be/DHMV/wmts?SERVICE=WMTS&VERSION=1.0.0&REQUEST=GetTile&LAYER=DHMV_II_SVF_25cm&STYLE=&FORMAT=image/png&TILEMATRIXSET=GoogleMapsVL&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}'
+            })
+        });
+var lyr_LiDAR_DHMV_II_25CM_YearlyIrradianceTotal_8 = new ol.layer.Tile({
+                            source: new ol.source.TileWMS(({
+                              url: "https://remotesensing.vlaanderen.be/services/openlidar/wms",
+                              attributions: ' ',
+                              params: {
+                                "LAYERS": "LiDAR_DHMV_II_25CM_YearlyIrradianceTotal",
+                                "TILED": "true",
+                                "VERSION": "1.3.0"},
+                            })),
+                            title: 'LiDAR_DHMV_II_25CM_YearlyIrradianceTotal',
+                            popuplayertitle: 'LiDAR_DHMV_II_25CM_YearlyIrradianceTotal',
+                            type: '',
+                            opacity: 1.000000,
+                            
+                            
+                          });
+              wms_layers.push([lyr_LiDAR_DHMV_II_25CM_YearlyIrradianceTotal_8, 0]);
+var format_gemeenten_9 = new ol.format.GeoJSON();
+var features_gemeenten_9 = format_gemeenten_9.readFeatures(json_gemeenten_9, 
+            {dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857'});
+var jsonSource_gemeenten_9 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_gemeenten_9.addFeatures(features_gemeenten_9);
+var lyr_gemeenten_9 = new ol.layer.Vector({
+                declutter: false,
+                source:jsonSource_gemeenten_9, 
+                style: style_gemeenten_9,
+                popuplayertitle: 'gemeenten',
+                interactive: false,
+                title: '<img src="styles/legend/gemeenten_9.png" /> gemeenten'
+            });
+var lyr_tertiair_10 = new ol.layer.Image({
+        opacity: 1,
+        
+    title: 'tertiair<br />' ,
+        
+        
+        source: new ol.source.ImageStatic({
+            url: "./layers/tertiair_10.png",
+            attributions: ' ',
+            projection: 'EPSG:3857',
+            alwaysInRange: true,
+            imageExtent: [403906.472517, 6588299.439503, 409361.031982, 6591308.715828]
+        })
+    });
+var lyr_pluviaal_11 = new ol.layer.Image({
+        opacity: 1,
+        
+    title: 'pluviaal<br />' ,
+        
+        
+        source: new ol.source.ImageStatic({
+            url: "./layers/pluviaal_11.png",
+            attributions: ' ',
+            projection: 'EPSG:3857',
+            alwaysInRange: true,
+            imageExtent: [403935.328500, 6588351.576900, 409334.078500, 6591256.576900]
+        })
+    });
+
+lyr_GoogleHybrid_0.setVisible(true);lyr_WorldOpenStreetMapFoundationOpenStreetMapCartoStyledefault_1.setVisible(true);lyr_BelgiNGIMapBelgiumin1873vanaf1860_2.setVisible(false);lyr_VlaanderenDigitaalVlaanderenFerrariskaart1777Vlaanderen_3.setVisible(false);lyr_Villaret_4.setVisible(false);lyr_FlandersDigitaalVlaanderenAtlasderBuurtwegenca1840Vlaanderen_5.setVisible(false);lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIImultidirectionalehillshade025m_6.setVisible(false);lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIISkyviewfactor025m_7.setVisible(false);lyr_LiDAR_DHMV_II_25CM_YearlyIrradianceTotal_8.setVisible(false);lyr_gemeenten_9.setVisible(true);lyr_tertiair_10.setVisible(false);lyr_pluviaal_11.setVisible(false);
+var layersList = [lyr_GoogleHybrid_0,lyr_WorldOpenStreetMapFoundationOpenStreetMapCartoStyledefault_1,lyr_BelgiNGIMapBelgiumin1873vanaf1860_2,lyr_VlaanderenDigitaalVlaanderenFerrariskaart1777Vlaanderen_3,lyr_Villaret_4,lyr_FlandersDigitaalVlaanderenAtlasderBuurtwegenca1840Vlaanderen_5,lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIImultidirectionalehillshade025m_6,lyr_VlaanderenDigitaalVlaanderenDigitaalHoogtemodelVlaanderenIISkyviewfactor025m_7,lyr_LiDAR_DHMV_II_25CM_YearlyIrradianceTotal_8,lyr_gemeenten_9,lyr_tertiair_10,lyr_pluviaal_11];
+lyr_gemeenten_9.set('fieldAliases', {'id': 'id', 'UIDN': 'UIDN', 'OIDN': 'OIDN', 'TERRID': 'TERRID', 'NISCODE': 'NISCODE', 'NAAM': 'NAAM', 'DATPUBLBS': 'DATPUBLBS', 'NUMAC': 'NUMAC', });
+lyr_gemeenten_9.set('fieldImages', {'id': 'TextEdit', 'UIDN': 'Range', 'OIDN': 'Range', 'TERRID': 'Range', 'NISCODE': 'TextEdit', 'NAAM': 'TextEdit', 'DATPUBLBS': 'DateTime', 'NUMAC': 'TextEdit', });
+lyr_gemeenten_9.set('fieldLabels', {'id': 'no label', 'UIDN': 'no label', 'OIDN': 'no label', 'TERRID': 'no label', 'NISCODE': 'no label', 'NAAM': 'no label', 'DATPUBLBS': 'no label', 'NUMAC': 'no label', });
+lyr_gemeenten_9.on('precompose', function(evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
